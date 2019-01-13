@@ -5,7 +5,7 @@ class Nav extends React.Component{
 		return (
 			<nav>
 				<img 
-					src="iconfinder_magnifyingglass_1055031.svg" 	alt="logo"
+					src="icon.svg" 	alt="logo"
 					id="logo"/>
 				<p>MAL Search</p>
 			</nav>
