@@ -19,7 +19,12 @@ class Output extends React.Component{
 			this.setState({
 				results:data.results.map(anime => {
 					return (
-						<div className="card" key={key++}>
+						<div 
+						className="card" 
+						key={key++} 
+						onClick={()=>{
+							this.props.setupModal(anime);
+						}}>
 						<img 
 							src={anime.image_url} 
 							alt="cover pic" 

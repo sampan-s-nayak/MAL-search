@@ -86,13 +86,11 @@ nav{
 
 .autocomplete{
     position:relative;
-    right: -7px;
+    right: -6px;
     top:-2px;
     background-color: rgba(5, 0, 0, 0.603);
-    transition-delay: 1s;
-    transition-duration: 4s;
     color: white;
-    border-top: .8px solid #5a5a5a;
+    border-top: .8px solid #838080;
     border-radius: 0 0 8px 8px;
     font-size: .85em;
   }
@@ -160,13 +158,6 @@ nav{
       flex-direction: column;
       font-size: .9em;
     }
-  
-    /* {
-      (this.state.error)&&
-        (<div className="error">
-          <p>enter atleast three letters</p>
-        </div>)
-    } */
 
     .error{
       display:flex;
@@ -185,6 +176,17 @@ nav{
           color:black;
           text-transform: capitalize;
         }
+
+#modal{
+  display:flex;
+  justify-content: center;
+  width:70%;
+  position:fixed;
+  top: 3em;
+  right:5em;
+  background-color: white;
+  padding:.5em;
+}
     
 @media only screen and (min-width: 840px) {
     /* tablets and desktop */

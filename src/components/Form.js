@@ -1,6 +1,7 @@
 import React from "react";
 import Output from "./Output";
 import Input from "./Input"
+import Modal from "./Modal"
 
 class Form extends React.Component{
 
@@ -10,6 +11,9 @@ class Form extends React.Component{
 		// binding functions which manipulate state info
 		this.getData = this.getData.bind(this);
 		this.submit = this.submit.bind(this);
+		this.removeModal = this.removeModal.bind(this);
+		this.setupModal = this.setupModal.bind(this);
+
 
 		this.state ={
 			type:"anime",
@@ -19,7 +23,9 @@ class Form extends React.Component{
 			predict:false,
 			getData:this.getData,
 			submitFun:this.submit,
-			getType:this.getType
+			getType:this.getType,
+			showModal:false,
+			modalData: []
 		};
 	}
 
@@ -77,6 +83,7 @@ class Form extends React.Component{
 							<Output 
 							type={this.state.type}
 							name={this.state.name}
+							setupModal={this.setupModal}
 							/>
 						</div>)
 				}
@@ -91,6 +98,12 @@ class Form extends React.Component{
 							</div>
 						</div>)
 				}
+				{this.state.showModal &&
+					<Modal
+					 	uniqueId={this.state.modalData.mal_id}
+						removeModal={this.removeModal} 
+						type={this.state.type}
+					/>}
 			</div>
 		);
 	}
@@ -128,7 +141,7 @@ class Form extends React.Component{
 				});
 			}
 		}
-}
+	}
 
 	submit(){
 		if(this.state.name.length >= 3){
@@ -143,6 +156,23 @@ class Form extends React.Component{
 				error:true
 			});
 		}
+	}
+
+	/*
+	 * function to handle the modal features
+	 */
+
+	removeModal(){
+		this.setState({
+			showModal:false
+		});
+	}
+
+	setupModal(anime){
+		this.setState({
+			modalData:anime,
+			showModal:true
+		});
 	}
 
 }
