@@ -1,0 +1,235 @@
+body{
+  margin:0;
+  background-color: whitesmoke;
+}
+ /* *nav bar */
+nav{
+  display:flex;
+  justify-content: space-between;
+  background-color: #f3482a;
+}
+  nav p{
+    font-size: 1.5em;
+    color:white;
+    font-family: 'Roboto Slab', serif;
+    text-transform: capitalize;
+    margin:.75em 0;
+    margin-right:1em;
+  }
+
+  #logo{
+    margin: .4em;
+    width:3em;
+  }
+/* * Form Outer */
+.centre{
+  margin: 2.5em 0;
+  display:flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.form-wrap{
+  align-self: center;
+  max-width: 480px;
+  width:450px;
+  min-width: 200px;
+  background-color: #ddd5d5;
+  border: 0.9px solid grey;
+  border-radius:8px;
+  padding:1em;
+  font-family: 'Roboto Slab', serif;
+  color:#070731;
+}
+/* * Form Inner */
+  .form-wrap h2 , h4{
+    margin: .5em 0;
+  }
+
+  #name{
+    width:98.9%;
+    height:2em;
+    font-family: 'Roboto Slab', serif;
+    border: .5px solid #b1b1b1;
+    padding-left: .4em;
+    border-radius:2px;
+    outline:0;
+    text-transform: capitalize;
+    margin:0 .5em;
+    font-size: .8em;
+  }
+
+  .type-select{
+    margin-top: .9em;
+    margin-left: .9em;
+  }
+
+  .form-wrap button{
+    width:100%;
+  }
+
+  .btn-main{
+    outline: 0;
+    background-color:#5151d8;
+    color: white;
+    border: .6px solid #4747e2;
+    border-radius:11px;
+    padding: .5em;
+    font-size: 1em;
+    box-shadow:1px 1px 3px 1px #5c5ce4;
+  }
+
+  .btn-main:hover{
+    box-shadow:0 0 0;
+    background-color:#3f3fd4;
+  }
+
+.autocomplete{
+    position:relative;
+    right: -7px;
+    top:-2px;
+    background-color: rgba(5, 0, 0, 0.603);
+    transition-delay: 1s;
+    transition-duration: 4s;
+    color: white;
+    border-top: .8px solid #5a5a5a;
+    border-radius: 0 0 8px 8px;
+    font-size: .85em;
+  }
+
+  .predict-item{
+    padding:.3em 1em; 
+    margin:0 0;
+  }
+  .predict-item:hover{
+    background: rgba(206, 202, 202, 0.507);
+  }
+
+.output{
+  display: block;
+}
+
+.output-wrap{
+  margin: 2em .5em;
+  align-self: center; 
+}
+
+  .output{
+    margin:1em 0;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:1em;
+  }
+
+    .card{
+      background-color: white;
+      border:1px solid grey;
+      border-radius: 8px;
+      box-shadow: 0px -1px 1px 2px #ccc;
+      color:#1b1b1b;
+    }
+
+    .card:hover{
+      box-shadow: 0 0 0;
+    }
+
+    .card-img{
+      width:100%;
+      max-height: 28em;
+      padding:0 !important;
+    }
+
+    .card-content{
+      padding:.5em;
+    }
+
+    .btn-card{
+      text-align: center;
+      padding:auto;
+      background-color: rgb(84, 84, 233);
+      align-self: center;
+      text-decoration: none;
+      width:10em;
+    }
+
+    .info{
+      margin-left: .5em;
+      color:#080606cc;
+      display:flex;
+      text-transform: capitalize;
+      flex-direction: column;
+      font-size: .9em;
+    }
+  
+    /* {
+      (this.state.error)&&
+        (<div className="error">
+          <p>enter atleast three letters</p>
+        </div>)
+    } */
+
+    .error{
+      display:flex;
+      justify-content: center;
+    }
+      #error-inner{
+        width:15.9em;
+
+      }
+        #error-inner p{
+          padding:.6em 1em;
+          background-color:tomato;
+          border:1px solid red;
+          border-radius:12px;
+          font-weight:600; 
+          color:black;
+          text-transform: capitalize;
+        }
+    
+@media only screen and (min-width: 840px) {
+    /* tablets and desktop */
+    .output{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap:1em;
+    }
+    .card-img{
+      max-height: 22em;
+    }
+  }
+
+@media only screen and (max-width: 840px) {
+   /* tablets and desktop */
+   .output{
+     display:grid;
+     grid-template-columns: repeat(3,1fr);
+     grid-gap:1em;
+   }
+}
+
+@media only screen and (max-width: 570px) {
+  /* tablets and desktop */
+  .output{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:1em;
+  }
+  .form-wrap{
+    width:350px;
+  }
+}
+
+@media only screen and (max-width: 521px) {
+      /* portrait phones */
+      .output{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-gap:.5em;
+      }
+      .form-wrap{
+        width:250px;
+      }
+      .output-wrap{
+        margin: 2em 3em;
+      }
+  }
