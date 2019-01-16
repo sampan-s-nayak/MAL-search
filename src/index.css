@@ -177,17 +177,28 @@ nav{
           text-transform: capitalize;
         }
 
-#modal{
-  display:flex;
-  justify-content: center;
-  width:70%;
+.modal-container{
+  width:100%;
+  height:100%;
   position:fixed;
-  top: 3em;
-  right:5em;
-  background-color: white;
-  padding:.5em;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.5);
+  overflow: auto;
 }
-    
+
+  #modal-inner{
+    background-color: white;
+    /* display:block; */
+    width:65%;
+    padding:2em;
+    margin:20% auto;
+  }
+
+
+/* 
+ * media queries to make the page responsive 
+ */
 @media only screen and (min-width: 840px) {
     /* tablets and desktop */
     .output{
@@ -222,7 +233,7 @@ nav{
 }
 
 @media only screen and (max-width: 521px) {
-      /* portrait phones */
+      /* phones */
       .output{
         display:grid;
         grid-template-columns: 1fr;
